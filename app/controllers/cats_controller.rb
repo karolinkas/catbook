@@ -33,13 +33,13 @@ class CatsController < ApplicationController
   private
 
   def load_cat
-    @cat = Cat.where("id = #{params[:id]}").visible.first
+    @cat = Cat.where("id = ?", params[:id]).visible.first
 
     render text: 'Not Found', status: '404' unless @cat
   end
 
   def cats_params
-    { visible: true }.merge(params[:cat])
+    params.require(:cat).permit(:name,:birthday)
   end
 
   # Do you think this is a good place to put this logic?

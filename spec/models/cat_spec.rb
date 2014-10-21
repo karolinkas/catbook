@@ -34,4 +34,21 @@ RSpec.describe Cat, type: :model do
     end
   end
 
+  describe "#has valid email-adress" do
+    let(:cat) { create(:cat) }
+
+    it "returns the list of cats wit valid email adresses" do
+      cat.email = 'user@foo,com'
+      cat.should_not be_valid
+      cat.email = 'user_at_foo.org'
+      cat.should_not be_valid
+      cat.email = 'example.user@foo.'
+      cat.should_not be_valid
+      cat.email = 'foo@bar_baz.com'
+      cat.should_not be_valid
+      cat.email = 'foo@bar+baz.com'
+      cat.should_not be_valid
+    end
+  end
+
 end

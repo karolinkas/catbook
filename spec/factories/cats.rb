@@ -6,6 +6,8 @@ FactoryGirl.define do
   factory :cat do
     name     { Faker::Name.name } # Why using lamdba here?
     birthday { Faker::Date.birthday }
+    password_confirmation "password"
+    password "password"
     visible  true
-  end
+  end 
 end

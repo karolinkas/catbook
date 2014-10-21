@@ -7,12 +7,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+
     <div class="container">
       <% flash.map do |key, msg| %>
         <%= content_tag :div, msg, id: key %>
       <% end %>
-
+        
       <%= yield %>
+      <%= link_to "New Cat", new_register_path %>
     </div>
   </body>
 </html>

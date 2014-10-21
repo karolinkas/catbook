@@ -1,6 +1,6 @@
 class Cat < ActiveRecord::Base
   validates :name, presence: true, length: { in: 2..255 }
-  validates :email, confirmation: true 
+  validates :email, confirmation: true, uniqueness: true 
 
 
   scope :visible, -> { where(visible: true) }

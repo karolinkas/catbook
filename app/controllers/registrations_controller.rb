@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @cat = Cat.new(cat_params)
     if @cat.save
+      CatMailer.delay(run_at: 5.minutes.from_now).welcome(@cat)
       redirect_to cats_path
     else
       render :new
@@ -15,6 +16,7 @@ class RegistrationsController < ApplicationController
 
     render :new
   end
+
 
   private
 

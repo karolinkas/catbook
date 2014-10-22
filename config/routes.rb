@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   root 'registrations#new'
 
   resources :cats, only: [:index, :show, :edit, :update]
+  
+  namespace :api do
+  	namespace :v1 do
+			resources :cats, only: [:index,:show]
+		end
+	end
+
+	
+
 
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"

@@ -1,3 +1,51 @@
 // Place all the styles related to the cadd controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1{
+	font-weight: 100 !important;
+	font-size: 60px !important;
+}
+
+body{
+	background-color: teal !important;
+	color: gainsboro !important;
+	font-weight: 200 !important;
+}
+
+table{
+	margin_top: 25px;
+}
+
+tr{
+	background-color: lightsalmon !important;
+	color: lightslategray !important;
+}
+
+
+td{
+	color: gray !important;
+}
+
+
+td a{
+	color: gray !important;
+}
+
+a{
+	margin_top: 20px !important;
+	color: gainsboro !important;
+}
+
+label{
+	font-weight: 400 !important;
+}
+
+form{
+	margin: 30px;
+}
+
+form input {
+	
+}
